@@ -83,7 +83,7 @@ void				draw_texture(t_env *env, int x)
     getrgb(get_pixel(env->wall[env->textnum/* wallstex(env) */], env->texx, (int)y), env
                /*  env->wall->format,
                 &(env->pxl[0]), &(env->pxl[1]), &(env->pxl[2]) */);
-   // SDL_UnlockSurface(env->wall);
+   SDL_UnlockSurface(env->wall[env->textnum]);
     setPixel(env, env->pxl, x);
 }
 

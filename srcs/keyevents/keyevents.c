@@ -12,12 +12,12 @@
 
 #include "wolf3d.h"
 
-void	changecolor(t_env *env)
+/* void	changecolor(t_env *env)
 {
 	env->r = rand() % 256;
 	env->g = rand() % 256;
 	env->b = rand() % 256;
-}
+} */
 
 void	ft_keyevent(t_env *env)
 {
@@ -66,8 +66,8 @@ int		keyrelease(t_env *env)
 
 void	keypress2(t_env *env)
 {
-	if (env->events.key.keysym.sym == SDLK_SPACE)
-		changecolor(env);
+	if (env->events.key.keysym.sym == SDLK_ESCAPE)
+		ft_exit(env);
 	if (env->events.key.keysym.sym == SDLK_w)
 		env->up = 1;
 	if (env->events.key.keysym.sym == SDLK_s)
@@ -76,8 +76,8 @@ void	keypress2(t_env *env)
 		env->right = 1;
 	if (env->events.key.keysym.sym == SDLK_a)
 		env->left = 1;
-	if (env->events.key.keysym.sym == SDLK_m)
-		manage_key(env);
+	/* if (env->events.key.keysym.sym == SDLK_m)
+		manage_key(env); */
 	if (env->events.key.keysym.sym == SDLK_TAB)
 		env->map = 1;
 	if (env->events.key.keysym.sym == SDLK_LSHIFT)
@@ -86,9 +86,9 @@ void	keypress2(t_env *env)
 
 int		keypress(t_env *env)
 {
-	if (env->events.key.keysym.sym == SDLK_ESCAPE)
+	if (env->events.key.keysym.sym == SDLK_SPACE)
 		ft_init_menu(env);
-	manage_volume(env);
+/* 	manage_volume(env); */
 	keypress2(env);
 	env->events.motion.x = env->mousex;
 	return (1);
