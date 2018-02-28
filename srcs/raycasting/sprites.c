@@ -12,7 +12,7 @@
 
 #include "wolf3d.h"
 
-void        ft_swapdouble(double *a, double *b)
+/* void        ft_swapdouble(double *a, double *b)
 {
 	double     tmp;
 
@@ -130,5 +130,5 @@ void        ft_sprites(t_env *env)
 			}
 		}
 	}
-}
+} */
 

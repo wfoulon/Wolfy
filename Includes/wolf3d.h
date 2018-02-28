@@ -85,12 +85,12 @@ typedef struct			s_effects
 	SDL_AudioDeviceID	device3;
 }						t_effects;
 
-typedef struct			s_sprite
+/* typedef struct			s_sprite
 {
 	double				x;
 	double				y;
 	int					texture;
-}						t_sprite;
+}						t_sprite; */
 
 typedef struct			s_menu
 {
