@@ -23,8 +23,7 @@ SRC = srcs/config/settings.c \
 		srcs/sdl/ft_pixel.c \
 		srcs/audio/audio.c \
 		srcs/ui/minimap.c \
-		srcs/Menu/menu.c \
-		srcs/Menu/print.c \
+		srcs/menu/menu.c \
 		srcs/ui/weapon.c \
 		srcs/audio/soundeffects.c \
 		srcs/keyevents/mouseevents.c \

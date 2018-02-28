@@ -12,7 +12,7 @@
 
 #include "wolf3d.h"
 
-void			print_settings(t_env *env, int x, int y)
+/* void			print_settings(t_env *env, int x, int y)
 {
 	static int close = 0;
 
@@ -28,8 +28,8 @@ void			print_settings(t_env *env, int x, int y)
 			env->menus->image);
 		SDL_FreeSurface(env->menus->image);
 		close = (env->clic == 1 ? 1 : close);
- /*		if (close == 1 && env->clic == 0)
-			ft_change_settings(env);*/
+ 		if (close == 1 && env->clic == 0)
+			ft_change_settings(env);
 	}
 	else
 	{
@@ -44,3 +44,5 @@ void			print_settings(t_env *env, int x, int y)
 	SDL_RenderCopy(env->render, env->menus->menu, NULL, &env->menus->position);
 	SDL_DestroyTexture(env->menus->menu);
 }
+  */
+ 

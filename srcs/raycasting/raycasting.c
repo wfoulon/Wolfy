@@ -153,4 +153,3 @@ void		raycasting(t_env *env, int x)
 		}
 	}
 }
-

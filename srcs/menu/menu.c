@@ -75,7 +75,7 @@ void			print_exit(t_env *env, int x, int y)
 void			ft_check_menu(t_env *env, int x, int y)
 {
 	print_exit(env, x, y);
-	print_settings(env, x, y);
+/* 	print_settings(env, x, y); */
 /* 	print_continue(env, x, y);
 	print_save(env, x, y); */
 	ft_menu_audio(env, x, y);
