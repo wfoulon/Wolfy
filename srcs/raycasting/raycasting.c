@@ -128,14 +128,14 @@ void			ft_calc_raycasting(t_env *env, int x)
 void		raycasting(t_env *env, int x)
 {
 	(void)x;
-	static Uint32 startclock = 0;
+/* 	static Uint32 startclock = 0;
 	static Uint32 deltaclock = 0;
 	static Uint32 currentFPS = 0;
 
 	deltaclock = SDL_GetTicks() - startclock;
 	startclock = SDL_GetTicks();
 	if (deltaclock != 0)
-		currentFPS = 1000 / deltaclock;
+		currentFPS = 1000 / deltaclock; */
 	//ft_printf("%d\n", currentFPS);
 	sdlthread(env);
 	if (env->closeprog)

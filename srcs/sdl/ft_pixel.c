@@ -18,19 +18,16 @@ void setPixel(t_env *env, Uint8 pxl[4], size_t x)
 	
 	env->fog = 1 - (env->perpwalldist / 10) * 1.2;
 	env->fog = (env->fog < 0 ? 0 : env->fog);
-	couleur = RGB(env->fog * pxl[0], env->fog * pxl[1], env->fog * pxl[2]); /* SDL_MapRGB(env->format, pxl[0], pxl[1], pxl[2],
-        env->shift == 2 ? 200 : pxl[3]) */
-	;
+	couleur = RGB(env->fog * pxl[0], env->fog * pxl[1], env->fog * pxl[2]);
     env->pixels[env->drawstart * env->resolutionw + x] = couleur;
 }
 
 Uint32 get_pixel(SDL_Surface *surface, int x, int y)
 {
-    Uint8 *p;
+    Uint32 *p;
 
-    p = (Uint8 *)surface->pixels + y * surface->pitch + x *
-    	surface->format->BytesPerPixel;
-    if (surface->format->BytesPerPixel == 1)
+    p = surface->pixels + y * surface->pitch + x * 4;
+   /*  if (surface->format->BytesPerPixel == 1)
         return (*p);
     else if (surface->format->BytesPerPixel == 2)
         return (*(Uint16 *)p);
@@ -42,22 +39,17 @@ Uint32 get_pixel(SDL_Surface *surface, int x, int y)
             return (p[0] | p[1] << 8 | p[2] << 16);
     }
     else if (surface->format->BytesPerPixel == 4)
-        return (*(Uint32 *)p);
-    return (0);
+        return (*(Uint32 *)p); */
+    return (*p);
 }
 
 void ft_createpxl(t_env *env)
 {
-    int x;
-
 	free(env->pixels);
-	env->pixels = (Uint32 *)malloc(sizeof(Uint32) * env->resolutionw *
-								   env->resolutionh);
-	x = -1;
-  /*   while (++x < (env->resolutionh * env->resolutionw) * 0.5)
-        env->pixels[x] = SDL_MapRGBA(env->format, 204, 255, 255, 255); *//* 
-    while (++x < env->resolutionh * env->resolutionw)
-        env->pixels[x] = SDL_MapRGBA(env->format, 255, 229, 204, 255); */
+	if (!(env->pixels = (Uint32 *)malloc(sizeof(Uint32) * env->resolutionw *
+								   env->resolutionh + 4)))
+            ft_str_error(env, "MALLOC FAILURE : PIXEL CREATION");
+	
 }
 
 void                getrgb(int color, t_env *env)
@@ -79,15 +71,15 @@ void				draw_texture(t_env *env, int x)
     int y;
 
     y = (env->drawstart * 2 - env->resolutionh + env->lineheight) *
-        (env->wall[env->textnum/* wallstex(env) */]->h / 2) / env->lineheight;
-    getrgb(get_pixel(env->wall[env->textnum/* wallstex(env) */], env->texx, (int)y), env
+        (env->wall[env->textnum]->h / 2) / env->lineheight;
+    getrgb(get_pixel(env->wall[env->textnum], env->texx, (int)y), env
                /*  env->wall->format,
                 &(env->pxl[0]), &(env->pxl[1]), &(env->pxl[2]) */);
    SDL_UnlockSurface(env->wall[env->textnum]);
     setPixel(env, env->pxl, x);
 }
 
-int     wallstex(t_env *env)
+/* int     wallstex(t_env *env)
 {
    if (env->raydirx > 0)
        return (2);
@@ -98,4 +90,4 @@ int     wallstex(t_env *env)
    else if (env->side == 1)
        return (1);
    return (0);
-}
+} */

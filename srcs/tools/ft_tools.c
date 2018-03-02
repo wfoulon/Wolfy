@@ -77,3 +77,11 @@ void	ft_exit(t_env *env)
 	free(env);
 	exit(1);
 }
+
+void ft_str_error(t_env *e, char *str)
+{
+	ft_putendl("Error :");
+	ft_putendl(str);
+	e = NULL;
+	exit(EXIT_FAILURE);
+}

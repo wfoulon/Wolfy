@@ -277,5 +277,6 @@ void        			ft_begin_floor(t_env *env, t_floor *floor, int x);
 int 					wallstex(t_env *env);
 void        			ft_floor_var(t_env *env, t_floor *floor);
 void            		calc_floor(t_env *env, t_floor *floor);
+void 					ft_str_error(t_env *e, char *str);
 
 #endif
