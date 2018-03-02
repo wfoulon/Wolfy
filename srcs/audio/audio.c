@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wolf3d.h"
+/* #include "wolf3d.h"
 
 void			audiocallback(void *udata, Uint8 *stream, int len)
 {
@@ -82,3 +82,4 @@ void			manage_volume(t_env *env)
 	if (env->events.key.keysym.sym == SDLK_KP_PLUS)
 		env->audio.volume++;
 }
+ */

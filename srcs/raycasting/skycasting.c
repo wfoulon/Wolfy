@@ -12,7 +12,7 @@
 
 #include "wolf3d.h"
 
-void ft_begin_sky(t_env *env, t_floor *floor, int x)
+/* void ft_begin_sky(t_env *env, t_floor *floor, int x)
 {
     if (env->side == 0 && env->raydirx < 0)
     {
@@ -37,8 +37,8 @@ void ft_begin_sky(t_env *env, t_floor *floor, int x)
     //
     floor->distwall = env->perpwalldist;
     floor->distplayer = 0.0;
-/*     if (env->drawend < 0)
-        env->drawend = env->resolutionh; */
+     if (env->drawend < 0)
+        env->drawend = env->resolutionh;
     floor->y = 0;
     while (floor->y <= env->drawstart)
     {
@@ -60,4 +60,4 @@ void ft_begin_sky(t_env *env, t_floor *floor, int x)
         env->pixels[floor->y * env->resolutionw + x] = couleur;
         floor->y++;
     }
-}
+} */

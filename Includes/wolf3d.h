@@ -33,12 +33,12 @@
 # define RGB(r, g, b) (256 * 256 * (int)(r) + 256 * (int)(g) + (int)(b))
 # define SWIDTH 64
 # define SHEIGHT 64
-# define NUMSPRITES 2
+/* # define NUMSPRITES 2 */
 # define FLOOR 1
 # define SKY 2
-# define SPRITE 3
+/* # define SPRITE 3 */
 
-typedef	struct			s_audio
+/* typedef	struct			s_audio
 {
 	SDL_AudioSpec		audiospec;
 	Uint8				*audiobuffer;
@@ -47,7 +47,7 @@ typedef	struct			s_audio
 	Uint32				audiopos;
 	int					play;
 	int					volume;
-}						t_audio;
+}						t_audio; */
 
 typedef struct			s_steps
 {
@@ -123,7 +123,7 @@ typedef struct			s_env
 	t_steps				*steps;
 	t_shots				*shots;
 	t_effects			*effects;
-	t_audio				audio;
+	/* t_audio				audio; */
 	t_menu				*menus;
 	SDL_Window			*screen;
 	SDL_Renderer		*render;
@@ -189,7 +189,7 @@ typedef struct			s_env
 	SDL_Surface			**sfloor;
 	SDL_Surface			*ssky;
 	SDL_Surface			*swall;
-	SDL_Surface			*spritesur;
+	/* SDL_Surface			*spritesur; */
 	double				wallx;
 	int					texx;
 	int					test;
@@ -197,7 +197,7 @@ typedef struct			s_env
 	Uint8				pxl[4];
 	Uint8				pxlf[4];
 	Uint8				pxls[4];
-	Uint8				pxlsprite[4];
+	/* Uint8				pxlsprite[4]; */
 	SDL_PixelFormat		*format;
 	SDL_Texture			*twall;
 	SDL_Texture			*tmp;
@@ -210,8 +210,8 @@ typedef struct			s_env
 	int					soundclic;
 	int					soundbutton;
 	int					shot;
-	double				spritex;
-	double				spritey;
+	/* double				spritex;
+	double				spritey; */
 	double				invdet;
 	double				transformy;
 	double				transformx;
@@ -219,23 +219,23 @@ typedef struct			s_env
 	int					drawstartx;
 	int					drawendy;
 	int					drawendx;
-	int					spriteheight;
+	/* int					spriteheight;
 	int					spritewidth;
 	int					stripe;
 	int					spritetex;
-	int					spritetexy;
+	int					spritetexy; */
 	int					d;
 	Uint32				spritecolor;
 	double				*zbuffer;
-	int					*spriteorder;
+	/* int					*spriteorder;
 	double				*spritedistance;
-	int					spritescreenx;
+	int					spritescreenx; */
     double              fog;
     int 				textnum;
 }						t_env;
 
-void					ft_sprites(t_env *env);
-void					ft_begin_sky(t_env *env, t_floor *floor, int x);
+/* void					ft_sprites(t_env *env); */
+/* void					ft_begin_sky(t_env *env, t_floor *floor, int x); */
 void 					getrgb2(int color, t_env *env, int text);
 int						ft_strnblen(char *str);
 void					ft_calc_raycasting(t_env *env, int x);
@@ -265,11 +265,11 @@ void					sdl_loop(t_env *env);
 void					parse_map(t_env *env, int ymap);
 void					ft_createpxl(t_env *env);
 void					draw_texture(t_env *env, int x);
-int						wolf_audio(t_audio *audio);
+/* int						wolf_audio(t_audio *audio);
 int						init_audio(t_audio *audio);
 void					audiocallback(void *udata, Uint8 *stream, int len);
 void					manage_key(t_env *env);
-void					manage_volume(t_env *env);
+void					manage_volume(t_env *env); */
 void					ft_menu(t_env *env);
 void					ft_init_menu(t_env *env);
 void					ft_menu_audio(t_env *env, int x, int y);

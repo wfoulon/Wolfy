@@ -50,7 +50,7 @@ int		ft_checkmap(t_env *env, int key)
 
 void	exitaudio(t_env *env)
 {
-	SDL_FreeWAV(env->audio.audiobuffer);
+	/* SDL_FreeWAV(env->audio.audiobuffer); */
 	SDL_FreeWAV(env->shots->wavbuffer);
 	SDL_FreeWAV(env->steps->wavbuffer);
 	SDL_FreeWAV(env->steps->wavbuffer2);
@@ -77,4 +77,3 @@ void	ft_exit(t_env *env)
 	free(env);
 	exit(1);
 }
-

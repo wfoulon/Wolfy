@@ -30,8 +30,8 @@ void	init_env3(t_env *env)
 	env->longmapx = 0;
 	env->longmapy = 0;
 	env->zbuffer = (double *)malloc(sizeof(double) * env->resolutionw);
-	env->spriteorder = (int *)malloc(sizeof(int) * NUMSPRITES);
-	env->spritedistance = (double *)malloc(sizeof(double) * NUMSPRITES);
+	/* env->spriteorder = (int *)malloc(sizeof(int) * NUMSPRITES);
+	env->spritedistance = (double *)malloc(sizeof(double) * NUMSPRITES); */
 	env->floor = (t_floor *)malloc(sizeof(t_floor));
 }
 
@@ -60,7 +60,7 @@ void	init_env2(t_env *env)
 	env->sfloor[0] = SDL_LoadBMP("./Images/floor9.bmp");
 	env->sfloor[1] = SDL_LoadBMP("./Images/solgrass.bmp");
 	env->ssky = SDL_LoadBMP("./Images/floor5.bmp");
-	env->spritesur = SDL_LoadBMP("./Images/barrel.bmp");
+	/* env->spritesur = SDL_LoadBMP("./Images/barrel.bmp"); */
 	ft_putstr(SDL_GetError());
 	env->keystate = SDL_GetKeyboardState(NULL);
 	SDL_WarpMouseInWindow(env->screen, env->resolutionw *
@@ -126,4 +126,3 @@ void	sdl_loop(t_env *env)
 	while (1)
 		raycasting(env, 0);
 }
-

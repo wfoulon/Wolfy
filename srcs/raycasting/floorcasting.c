@@ -26,12 +26,12 @@ void        getrgb2(int color, t_env *env, int text)
         env->pxls[1] = (color & 0xFF00) >> 8;
         env->pxls[2] = (color & 0xFF);
     }
-    else if (text == SPRITE)
+   /*  else if (text == SPRITE)
     {
         env->pxlsprite[0] = (color & 0xFF0000) >> 16;
         env->pxlsprite[1] = (color & 0xFF00) >> 8;
         env->pxlsprite[2] = (color & 0xFF);
-    }
+    } */
 }
 
 void        ft_floor_var(t_env *env, t_floor *floor)
