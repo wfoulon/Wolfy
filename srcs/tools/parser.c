@@ -32,7 +32,8 @@ int			*ft_getnb_from_str(char *str, int x)
 	int		i;
 
 	i = 0;
-	tab = (int *)malloc(sizeof(int) * x);
+	if (!(tab = (int *)malloc(sizeof(int) * x)))
+		return (0);
 	while (*str)
 	{
 		if (ft_isdigit(*str) == 1)
