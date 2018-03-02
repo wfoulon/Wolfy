@@ -70,7 +70,7 @@ void			ft_set_variable(t_env *env, int x)
 
 void			ft_check_value(t_env *env)
 {
-	env->lineheight = (int)(env->resolutionh / (env->perpwalldist));
+	env->lineheight = (int)(env->resolutionh / (env->perpwalldist)) * 1.1;
 	env->drawstart = (-env->lineheight * 0.5 + env->resolutionh * 0.5);
 	env->drawstart = (env->drawstart < 0 ? 0 : env->drawstart);
 	env->drawend = env->lineheight * 0.5 + env->resolutionh * 0.5;

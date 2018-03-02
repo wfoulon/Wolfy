@@ -30,7 +30,8 @@ SRC = srcs/config/settings.c \
 		srcs/raycasting/sdlthread.c \
 		srcs/raycasting/floorcasting.c \
 		srcs/raycasting/sprites.c \
-		srcs/raycasting/skycasting.c
+		srcs/raycasting/skycasting.c \
+		srcs/sdl/sdl_init2.c
 
 LOGIN = wfoulon
 

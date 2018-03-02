@@ -27,9 +27,9 @@ int			main(int ac, char **av)
 	env->mapaddr = av[1];
 	if (sdl_initenv(env) == 1)
 		ft_exit(env);
-	ft_init_menu(env);
+	/* ft_init_menu(env);*/
 	SDL_WarpMouseGlobal(1280, 1400);
-	ft_init_menu(env);
+/* 	ft_init_menu(env); */
 /*	if (wolf_audio(&env->audio))
 		ft_putstr("Audio error");
 	env->audio.audiolen = 5000;

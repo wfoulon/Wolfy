@@ -38,12 +38,7 @@ void	init_env3(t_env *env)
 void	init_env2(t_env *env)
 {
 	init_env3(env);
-	env->guy = SDL_LoadBMP("Images/guy.bmp");
-	env->tguy = SDL_CreateTextureFromSurface(env->render, env->guy);
-	env->walltiles = SDL_LoadBMP("Images/walltiles.bmp");
-	env->twalltiles = SDL_CreateTextureFromSurface(env->render, env->walltiles);
-	env->floortiles = SDL_LoadBMP("Images/floortiles.bmp");
-	env->tfloortiles = SDL_CreateTextureFromSurface(env->render, env->floortiles);
+	init_env4(env);
 	env->pistol = SDL_LoadBMP("Images/Pistol3.bmp");
 	env->tpistol = SDL_CreateTextureFromSurface(env->render, env->pistol);
 	env->menus = (t_menu *)malloc(sizeof(t_menu));
@@ -91,19 +86,6 @@ void	init_env(t_env *env)
 	init_env2(env);
 }
 
-void	sdl_errors(t_env *env)
-{
-	if (env->screen != NULL)
-		SDL_DestroyWindow(env->screen);
-	if (env->render != NULL)
-		SDL_DestroyRenderer(env->render);
-	ft_putstr(SDL_GetError());
-	env = NULL;
-	free(env);
-	SDL_Quit();
-	exit(1);
-}
-
 int		sdl_initenv(t_env *env)
 {
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO))
@@ -120,9 +102,13 @@ int		sdl_initenv(t_env *env)
 	return (0);
 }
 
-void	sdl_loop(t_env *env)
+void	init_env4(t_env *env)
 {
-	env->closeprog = 1;
-	while (1)
-		raycasting(env, 0);
+ 	env->guy = SDL_LoadBMP("Images/guy.bmp");
+	env->tguy = SDL_CreateTextureFromSurface(env->render, env->guy);
+	env->walltiles = SDL_LoadBMP("Images/walltiles.bmp");
+	env->twalltiles = SDL_CreateTextureFromSurface(env->render, env->walltiles);
+	env->floortiles = SDL_LoadBMP("Images/floortiles.bmp");
+	env->tfloortiles = SDL_CreateTextureFromSurface(env->render,
+		env->floortiles);
 }

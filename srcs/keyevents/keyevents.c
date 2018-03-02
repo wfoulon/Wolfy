@@ -12,13 +12,6 @@
 
 #include "wolf3d.h"
 
-/* void	changecolor(t_env *env)
-{
-	env->r = rand() % 256;
-	env->g = rand() % 256;
-	env->b = rand() % 256;
-} */
-
 void	ft_keyevent(t_env *env)
 {
 	if (env->up || env->down || env->right || env->left)
@@ -86,11 +79,10 @@ void	keypress2(t_env *env)
 
 int		keypress(t_env *env)
 {
-	if (env->events.key.keysym.sym == SDLK_SPACE)
-		ft_init_menu(env);
+	/* if (env->events.key.keysym.sym == SDLK_SPACE)
+		ft_init_menu(env); */
 /* 	manage_volume(env); */
 	keypress2(env);
 	env->events.motion.x = env->mousex;
 	return (1);
 }
-

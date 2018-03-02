@@ -12,7 +12,7 @@
 
 #include "wolf3d.h"
 
-void			ft_menu_audio(t_env *env, int x, int y)
+/* void			ft_menu_audio(t_env *env, int x, int y)
 {
 	if ((x >= env->resolutionw / 2 - 150 + 20 && x <= env->resolutionw / 2 - 150
 	+ 280 && y >= env->resolutionh / 2 - 300 + 480 && y <= env->resolutionh / 2
@@ -67,7 +67,7 @@ void			print_exit(t_env *env, int x, int y)
 		close = 0;
 	}
 	SDL_QueryTexture(env->menus->menu, NULL, NULL, &env->menus->position.w,
-					 &env->menus->position.h);
+					&env->menus->position.h);
 	SDL_RenderCopy(env->render, env->menus->menu, NULL, &env->menus->position);
 	SDL_DestroyTexture(env->menus->menu);
 }
@@ -75,12 +75,12 @@ void			print_exit(t_env *env, int x, int y)
 void			ft_check_menu(t_env *env, int x, int y)
 {
 	print_exit(env, x, y);
-/* 	print_settings(env, x, y); */
-/* 	print_continue(env, x, y);
-	print_save(env, x, y); */
+	print_settings(env, x, y);
+ 	print_continue(env, x, y);
+	print_save(env, x, y); 
 	ft_menu_audio(env, x, y);
 	SDL_RenderPresent(env->render);
-	SDL_RenderClear(env->render);
+ 	SDL_RenderClear(env->render);
 }
 
 void			print_background(t_env *env)
@@ -102,7 +102,6 @@ void			ft_menu(t_env *env)
 	static int		x;
 	static int		y;
 
-
 	SDL_SetRenderDrawColor(env->render, 0, 0, 0, 0);
 	if (env->menuset >= 0)
 	{
@@ -119,8 +118,8 @@ void			ft_menu(t_env *env)
 			&env->menus->position);
 		SDL_DestroyTexture(env->menus->menu);
 		env->menuset = 1;
-	}  
+	}
 	env->clic = SDL_GetMouseState(&x, &y);
 	ft_check_menu(env, x, y);
 	SDL_RenderClear(env->render);
-}
+} */

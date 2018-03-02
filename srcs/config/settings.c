@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "wolf3d.h"
 
-void	get_resolution(t_env *env)
+void		get_resolution(t_env *env)
 {
 	char	*line;
 	int		fd;
