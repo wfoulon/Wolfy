@@ -19,7 +19,7 @@ int				raycalc(void *tab)
 
 	i = 0;
 	env = (t_env *)tab;
-	while (I < 1024)
+	while (i < 1024)
 		ft_calc_raycasting(env, i++);
 	return (i);
 }
@@ -61,6 +61,9 @@ void			sdlthread(t_env *env)
 		tmp++;
 	}
 	ft_createpxl(env);
+	raycalc(env);
+	ft_print_render(env);
+	ft_keyevent(env);
 	/* sdlgamethread(e, i);
 	if (env->menu == 0)
 	{
